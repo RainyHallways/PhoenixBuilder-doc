@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "/docs/*"
-  workflow_dispatch: {}
 
 jobs:
   build:
@@ -14,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         os: [ubuntu-latest]
       fail-fast: false
 
