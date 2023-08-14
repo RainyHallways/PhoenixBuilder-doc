@@ -38,7 +38,7 @@ features:
     link: https://afdian.net/a/fbdoc
     linkText: vme50
   - title: 别叨了，点击此处 文档，启动!!!
-    icon: 🫡
+    icon: 🤪
     details: 文档 启动!!!
     link: /guide
     linkText: 给👴启动!
