@@ -51,7 +51,7 @@ export default withPwa(
           ],
         },
         { text: "关于PhoenixBuilder", link: "/about" },
-        { text: "捐赠支持", link: "https://afdian.net/a/fbdoc" }
+        { text: "捐赠支持本站", link: "https://afdian.net/a/fbdoc" }
       ],
 
       footer: {
@@ -111,7 +111,7 @@ export default withPwa(
           ],
         },
         { text: "关于PhoenixBuilder", link: "/about" },
-        { text: "捐赠支持", link: "https://afdian.net/a/fbdoc" }
+        { text: "捐赠支持本站", link: "https://afdian.net/a/fbdoc" }
       ],
 
       socialLinks: [{ icon: "github", link: "https://github.com/RainyHallways/PhoenixBuilder-doc" }],
