@@ -47,4 +47,4 @@ jobs:
           publish_dir: ./docs/.vitepress/dist
           force_orphan: true
           publish_branch: gh-pages
-          cname: www.neomega.top
+          cname: pbd.neomega.top
