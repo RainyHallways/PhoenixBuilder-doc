@@ -1,0 +1,106 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-brand: #2ad89b;
+  --vp-c-brand-light: #2ad89b;
+  --vp-c-brand-lighter: #6cffcb;
+  --vp-c-brand-lightest: #a4ffdf;
+  --vp-c-brand-dark: #21c58b;
+  --vp-c-brand-darker: #16a070;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    -135deg,
+    #8845e0 35%,
+    #71c4d2
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -120deg,
+    #8845e0 50%,
+    #71c4d2 50%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(72px);
+  }
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+.dark {
+  --vp-custom-block-tip-border: var(--vp-c-brand);
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+/**
+ * Component: Badge
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-badge-libre-border: #caa016;
+  --vp-badge-libre-text: #fbfbfb;
+  --vp-badge-libre-bg: #eacd28;
+  --vp-badge-fb-border: #39636e;
+  --vp-badge-fb-text: #fbfbfb;
+  --vp-badge-fb-bg: #73c9e0;
+  --vp-badge-unsupport-border: #b20f1b;
+  --vp-badge-unsupport-text: #fbfbfb;
+  --vp-badge-unsupport-bg: #fe1526;
+}
