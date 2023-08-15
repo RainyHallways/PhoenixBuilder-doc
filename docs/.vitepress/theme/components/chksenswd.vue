@@ -4,7 +4,7 @@
   <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
   <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
   <div v-else class="result">
-    <div v-if="result[0]" class="result-item">
+    <div v-if="result" class="result-item">
     <span class="label">匹配结果:</span>
     <span class="value">{{ result[0] }}</span>
     </div>
@@ -52,7 +52,7 @@ export default {
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
-        resolve([small , replaceRegex]);
+        resolve([small,replaceRegex]);
         return;
         }
       }
