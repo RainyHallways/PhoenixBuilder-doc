@@ -51,7 +51,6 @@ export default withPwa(
           ],
         },
         { text: "关于PhoenixBuilder", link: "/about" },
-        { text: "违禁词检测工具", link: "/chksenswd" },
         { text: "捐赠支持本站", link: "https://afdian.net/a/fbdoc" }
       ],
 
@@ -112,7 +111,6 @@ export default withPwa(
           ],
         },
         { text: "关于PhoenixBuilder", link: "/about" },
-        { text: "违禁词检测工具", link: "/chksenswd" },
         { text: "捐赠支持本站", link: "https://afdian.net/a/fbdoc" }
       ],
 
