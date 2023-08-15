@@ -8,7 +8,7 @@
     <span class="label">匹配结果:</span>
     <span class="value">{{ result[0] }}</span>
     </div>
-    <div v-if="result[2]" class="result-item">
+    <div v-if="result" class="result-item">
     <span class="label">regex:</span>
     <span class="value">{{ result[1] }}</span>
     </div>
