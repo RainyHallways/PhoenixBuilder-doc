@@ -46,21 +46,79 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="container">
   <input v-model="userInput" type="text" placeholder="输入文字">
-  <button @click="checkSensitive" :disabled="isLoading">{{ isLoading ? '等待中' : '判断' }}</button>
-  <div v-if="isLoading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result">
-    敏感词: {{ result[0] }}
-    匹配结果: {{ result[1] }}
-    <div v-if="result[2]">替换的regex: {{ result[2] }}</div>
+  <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
+  <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
+  <div v-if="result" class="result">
+    <div class="result-item">
+    <span class="label">敏感词:</span>
+    <span class="value">{{ result[0] }}</span>
+    </div>
+    <div class="result-item">
+    <span class="label">匹配结果:</span>
+    <span class="value">{{ result[1] }}</span>
+    </div>
+    <div v-if="result[2]" class="result-item">
+    <span class="label">替换的regex:</span>
+    <span class="value">{{ result[2] }}</span>
+    </div>
   </div>
-  <div v-else>
-    当前语句中不包含违禁词
-  </div>
+  <div v-else class="no-match">当前语句中不包含违禁词</div>
   </div>
 </template>
 
 <style scoped>
-/* Add your styles here */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loading {
+  margin-top: 10px;
+  color: #888;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.result-item {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.no-match {
+  margin-top: 20px;
+  color: #888;
+  text-align: center;
+}
 </style>
