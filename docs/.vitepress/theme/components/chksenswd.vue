@@ -3,17 +3,17 @@
   <input v-model="userInput" type="text" placeholder="输入文字">
   <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
   <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result" class="result">
-    <div class="result-item">
+  <div v-else class="result">
+    <div v-if="result[0]" class="result-item">
     <span class="label">匹配结果:</span>
-    <span class="value">{{ result }}</span>
+    <span class="value">{{ result[0] }}</span>
     </div>
-    <div v-if="result" class="result-item">
+    <div v-if="result[1]" class="result-item">
     <span class="label">regex:</span>
-    <span class="value">{{ decodedregex }}</span>
+    <span class="value">{{ result[1] }}</span>
     </div>
+    <div v-else class="no-match">当前语句中不包含违禁词</div>
   </div>
-  <div v-else class="no-match">当前语句中不包含违禁词</div>
   </div>
 </template>
 
@@ -49,11 +49,10 @@ export default {
         "ig"
         );
         let sm = word.match(cur);
-        let decodedregex = nreg.regex[val].replace(/\(\?(i|\#\d)\)/g, "");
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
-        resolve(sm);
+        resolve([small , replaceRegex]);
         return;
         }
       }
