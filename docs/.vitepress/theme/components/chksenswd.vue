@@ -3,8 +3,8 @@
   <input v-model="userInput" type="text" placeholder="输入文字">
   <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
   <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result" class="result">
-    <div class="result-item">
+  <div v-else class="result">
+    <div v-if="result" class="result-item">
     <span class="label">匹配结果:</span>
     <span class="value">{{ result[0] }}</span>
     </div>
@@ -12,8 +12,8 @@
     <span class="label">regex:</span>
     <span class="value">{{ result[1] }}</span>
     </div>
+    <div v-else class="no-match">当前语句中不包含违禁词</div>
   </div>
-  <div v-else class="no-match">当前语句中不包含违禁词</div>
   </div>
 </template>
 
