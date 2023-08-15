@@ -1,3 +1,22 @@
+<template>
+  <div class="container">
+  <input v-model="userInput" type="text" placeholder="输入文字">
+  <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
+  <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
+  <div v-if="result" class="result">
+    <div class="result-item">
+    <span class="label">匹配结果:</span>
+    <span class="value">{{ result }}</span>
+    </div>
+    <div v-if="result[2]" class="result-item">
+    <span class="label">regex:</span>
+    <span class="value">{{ fullRegex }}</span>
+    </div>
+  </div>
+  <div v-else class="no-match">当前语句中不包含违禁词</div>
+  </div>
+</template>
+
 <script>
 import nreg from "./new_reg.json";
 export default {
@@ -6,6 +25,7 @@ export default {
     userInput: "",
     result: null,
     isLoading: false,
+    fullRegex: null,
   };
   },
   methods: {
@@ -30,9 +50,9 @@ export default {
         );
         let sm = word.match(cur);
         if (sm) {
-        // 添加判断条件，如果匹配成功就输出replace后的regex
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
-        resolve([`${val}.${n}`, sm, replaceRegex]);
+        this.fullRegex = nreg.regex[val][n];
+        resolve(sm);
         return;
         }
       }
@@ -44,29 +64,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="container">
-  <input v-model="userInput" type="text" placeholder="输入文字">
-  <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
-  <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result" class="result">
-    <div class="result-item">
-    <span class="label">敏感词:</span>
-    <span class="value">{{ result[0] }}</span>
-    </div>
-    <div class="result-item">
-    <span class="label">匹配结果:</span>
-    <span class="value">{{ result[1] }}</span>
-    </div>
-    <div v-if="result[2]" class="result-item">
-    <span class="label">替换的regex:</span>
-    <span class="value">{{ result[2] }}</span>
-    </div>
-  </div>
-  <div v-else class="no-match">当前语句中不包含违禁词</div>
-  </div>
-</template>
 
 <style scoped>
 .container {
