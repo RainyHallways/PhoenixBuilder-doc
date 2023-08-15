@@ -48,8 +48,8 @@ export default {
           ),
         "ig"
         );
-        let sm = word.match(cur);
         let regexdec = cur.replace(/\(\?(i|\#\d)\)/g, "");
+        let sm = word.match(cur);
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
