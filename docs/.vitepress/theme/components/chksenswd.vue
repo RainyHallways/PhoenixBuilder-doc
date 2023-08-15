@@ -13,7 +13,7 @@
     <span class="value">{{ result[1] }}</span>
     </div>
     <div v-if="result[2]" class="result-item">
-    <span class="label">regex:</span>
+    <span class="label">Regex: </span>
     <span class="value">{{ result[2] }}</span>
     </div>
   </div>
