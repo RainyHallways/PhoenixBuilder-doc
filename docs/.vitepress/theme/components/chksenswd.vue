@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { vue } from "vue";
 import nreg from "./new_reg.json";
 
-new Vue({
+new vue({
   data() {
   return {
     userInput: "",
