@@ -1,5 +1,5 @@
 <script setup>
-import Vue from "vue";
+import { ref } from "vue";
 import nreg from "./new_reg.json";
 
 new Vue({
