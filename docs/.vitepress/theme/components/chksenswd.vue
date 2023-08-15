@@ -55,3 +55,4 @@ function checkSensitiveWord(word) {
   }, 2000);
   });
 }
+</script>
