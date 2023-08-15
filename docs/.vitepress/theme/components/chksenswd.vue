@@ -10,7 +10,7 @@
     </div>
     <div v-if="result" class="result-item">
     <span class="label">regex:</span>
-    <span class="value">{{ nreg.regex[val] }}</span>
+    <span class="value">{{ replaceRegex }}</span>
     </div>
   </div>
   <div v-else class="no-match">当前语句中不包含违禁词</div>
@@ -50,7 +50,8 @@ export default {
         );
         let sm = word.match(cur);
         if (sm) {
-        let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
+        let replaceRegex = nreg.regex[val].replace(/\(\?(i|\#\d)\)/g, "");
+        let decodedregex = nreg.regex[val]
         this.fullRegex = nreg.regex[val][n];
         resolve(sm);
         return;
