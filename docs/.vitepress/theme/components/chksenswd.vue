@@ -9,7 +9,7 @@
     <span class="value">{{ result[0] }}</span>
     </div>
     <div v-if="result[1]" class="result-item">
-    <span class="label">匹配配结果:</span>
+    <span class="label">匹配结果:</span>
     <span class="value">{{ result[1] }}</span>
     </div>
     <div v-if="result[2]" class="result-item">
@@ -56,7 +56,7 @@ export default {
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
-        resolve([sm,cur]);
+        resolve([sm,`${val}.${n}`,cur]);
         return;
         }
       }
