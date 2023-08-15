@@ -1,18 +1,5 @@
-<template>
-  <div>
-  <input v-model="userInput" type="text" placeholder="输入文字">
-  <button @click="checkSensitive" :disabled="isLoading">{{ isLoading ? '等待中' : '判断' }}</button>
-  <div v-if="isLoading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result">
-    敏感词: {{ result[0] }}
-    匹配结果: {{ result[1] }}
-  </div>
-  </div>
-</template>
-
 <script>
 import nreg from "./new_reg.json";
-
 export default {
   data() {
   return {
@@ -43,7 +30,9 @@ export default {
         );
         let sm = word.match(cur);
         if (sm) {
-        resolve([`${val}.${n}`, sm]);
+        // 添加判断条件，如果匹配成功就输出replace后的regex
+        let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
+        resolve([`${val}.${n}`, sm, replaceRegex]);
         return;
         }
       }
@@ -55,6 +44,22 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div>
+  <input v-model="userInput" type="text" placeholder="输入文字">
+  <button @click="checkSensitive" :disabled="isLoading">{{ isLoading ? '等待中' : '判断' }}</button>
+  <div v-if="isLoading">正在进行敏感词判断，请稍候...</div>
+  <div v-if="result">
+    敏感词: {{ result[0] }}
+    匹配结果: {{ result[1] }}
+    <div v-if="result[2]">替换的regex: {{ result[2] }}</div>
+  </div>
+  <div v-else>
+    当前语句中不包含违禁词
+  </div>
+  </div>
+</template>
 
 <style scoped>
 /* Add your styles here */
