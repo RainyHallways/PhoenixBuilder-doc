@@ -11,7 +11,7 @@ import Analyzer from './.vitepress/theme/components/chksenswd.vue'
 :::tip 提示
 敏感词分析工具目前处于测试阶段，可能不稳定。
 
-如果你愿意帮助我们，就请试用一下，我们期待你的贡献！
+有这么好用的工具不捐赠一下qaq？到时候没有费用维护就没用了xwx
 :::
 
 ---
