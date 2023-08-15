@@ -5,12 +5,16 @@
   <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
   <div v-if="result" class="result">
     <div class="result-item">
-    <span class="label">匹配结果:</span>
+    <span class="label">违禁词:</span>
     <span class="value">{{ result[0] }}</span>
     </div>
     <div v-if="result[1]" class="result-item">
-    <span class="label">regex:</span>
+    <span class="label">匹配配结果:</span>
     <span class="value">{{ result[1] }}</span>
+    </div>
+    <div v-if="result[2]" class="result-item">
+    <span class="label">regex:</span>
+    <span class="value">{{ result[2] }}</span>
     </div>
   </div>
   <div v-else class="no-match">当前语句中不包含违禁词</div>
