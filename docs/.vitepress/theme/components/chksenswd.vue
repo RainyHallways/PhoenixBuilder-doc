@@ -6,11 +6,11 @@
   <div v-if="result" class="result">
     <div class="result-item">
     <span class="label">匹配结果:</span>
-    <span class="value">{{ result }}</span>
+    <span class="value">{{ result[0] }}</span>
     </div>
     <div v-if="result[2]" class="result-item">
     <span class="label">regex:</span>
-    <span class="value">{{ fullRegex }}</span>
+    <span class="value">{{ result[1] }}</span>
     </div>
   </div>
   <div v-else class="no-match">当前语句中不包含违禁词</div>
@@ -52,7 +52,7 @@ export default {
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
-        resolve(sm);
+        resolve([sm, fullRegex]);
         return;
         }
       }
