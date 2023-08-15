@@ -50,8 +50,7 @@ export default {
         );
         let sm = word.match(cur);
         if (sm) {
-        let replaceRegex = nreg.regex[val].replace(/\(\?(i|\#\d)\)/g, "");
-        let decodedregex = nreg.regex[val]
+        let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
         resolve(sm);
         return;
