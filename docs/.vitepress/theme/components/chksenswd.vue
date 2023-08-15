@@ -52,7 +52,7 @@ export default {
         if (sm) {
         let replaceRegex = nreg.regex[val][n].replace(/\(\?(i|\#\d)\)/g, "");
         this.fullRegex = nreg.regex[val][n];
-        resolve([sm, `nreg.regex[val]`]);
+        resolve([sm, fullRegex]);
         return;
         }
       }
