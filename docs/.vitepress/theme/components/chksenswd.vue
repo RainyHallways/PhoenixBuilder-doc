@@ -1,24 +1,27 @@
 <template>
   <div class="container">
   <input v-model="userInput" type="text" placeholder="输入文字">
-  <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '等待中' : '判断' }}</button>
+  <button @click="checkSensitive" :disabled="isLoading" class="btn">{{ isLoading ? '请等待...' : '提交' }}</button>
   <div v-if="isLoading" class="loading">正在进行敏感词判断，请稍候...</div>
-  <div v-if="result" class="result">
-    <div class="result-item">
-    <span class="label">违禁词:</span>
-    <span class="value">{{ result[0] }}</span>
+  <div v-else>
+    <div v-if="result" class="result">
+      <div class="result-item">
+      <span class="label">违禁词:</span>
+      <span class="value">{{ result[0] }}</span>
+      </div>
+      <div v-if="result[1]" class="result-item">
+      <span class="label">匹配结果:</span>
+      <span class="value">{{ result[1] }}</span>
+      </div>
+      <!--div v-if="showregex" class="result-item">
+      <span class="label">Regex: </span>
+      <span class="value">{{ result[2] }}</span>
+      </div-->
     </div>
-    <div v-if="result[1]" class="result-item">
-    <span class="label">匹配结果:</span>
-    <span class="value">{{ result[1] }}</span>
-    </div>
-    <div v-if="result[2]" class="result-item">
-    <span class="label">Regex: </span>
-    <span class="value">{{ result[2] }}</span>
+    <div v-else class="no-match">当前语句中不包含违禁词</div>
     </div>
   </div>
-  <div v-else class="no-match">当前语句中不包含违禁词</div>
-  </div>
+  <div class="container"><input type="checkbox" id="checkbox" v-model="agree" /><label for="checkbox">本人同意不恶意使用此工具</label></div>
 </template>
 
 <script>
@@ -30,12 +33,15 @@ export default {
     result: null,
     isLoading: false,
     fullRegex: null,
+    agree: false,
   };
   },
   methods: {
   async checkSensitive() {
     this.isLoading = true;
-    this.result = await this.checkSensitiveWord(this.userInput);
+    if (this.agree) {
+      this.result = await this.checkSensitiveWord(this.userInput);  
+    } else { alert("您必须同意协议才能使用"); }
     this.isLoading = false;
   },
   checkSensitiveWord(word) {
@@ -74,6 +80,7 @@ export default {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
+  display: block;
   font-family: Arial, sans-serif;
 }
 
@@ -87,6 +94,7 @@ input[type="text"] {
 
 .btn {
   display: inline-block;
+  margin: 5px 0;
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -94,6 +102,12 @@ input[type="text"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.checkbox {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
 }
 
 .loading {
@@ -104,8 +118,8 @@ input[type="text"] {
 .result {
   margin-top: 20px;
   padding: 10px;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
+  border: 1px solid #646cff;
+  color: #646bff;
   border-radius: 4px;
 }
 

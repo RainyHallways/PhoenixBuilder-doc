@@ -1,0 +1,34 @@
+name: Documate upload
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        os: [ubuntu-latest]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/
+      
+      - name: 📦 Install Dependencies
+        run: |
+          npm install -D
+          sudo apt-get install git -y
+          git clone https://github.com/LNSSPsd/PhoenixBuilder.git
+
+      - name: 🌌 Upload Documates
+        run: npm run documate:upload
