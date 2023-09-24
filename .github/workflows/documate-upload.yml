@@ -28,7 +28,7 @@ jobs:
         run: |
           npm install -D
           sudo apt-get install git -y
-          git clone https://github.com/LNSSPsd/PhoenixBuilder.git
+          git clone https://github.com/RainyHallways/PhoenixBuilder.git
 
       - name: 🌌 Upload Documates
         run: npm run documate:upload
