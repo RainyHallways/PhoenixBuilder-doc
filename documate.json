@@ -1,5 +1,5 @@
 {
     "root": ".",
-    "include": [ "**/*.md","PhoenixBuilder/*" ],
+    "include": [ "**/*.md","PhoenixBuilder/*.go","PhoenixBuilder/*.c","PhoenixBuilder/*.js" ],
     "backend": "https://t1479qr9qp.us.aircode.run/upload"
   }
