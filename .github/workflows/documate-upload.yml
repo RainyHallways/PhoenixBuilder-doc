@@ -26,9 +26,9 @@ jobs:
       
       - name: 📦 Install Dependencies
         run: |
-          npm install -D
+          npm install
           sudo apt-get install git -y
-          git clone https://github.com/RainyHallways/PhoenixBuilder.git
+          git clone https://github.com/rnhws-Team/FastBuilderWebsite-Achive.git
 
       - name: 🌌 Upload Documates
         run: npm run documate:upload
