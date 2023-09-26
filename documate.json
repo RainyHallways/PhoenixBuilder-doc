@@ -1,5 +1,5 @@
 {
     "root": ".",
-    "include": [ "**/*.md","**/*.go","**/*.c","**/*.js" ],
+    "include": [ "**/*.md" ],
     "backend": "https://t1479qr9qp.us.aircode.run/upload"
   }
