@@ -18,7 +18,7 @@ export default {
       "doc-footer-before": () => h(Contributors),
       "layout-bottom": () => h(ReloadPrompt),
       'nav-bar-content-before': () => h(Documate, {
-        endpoint: 'https://t1479qr9qp.us.aircode.run/ask',
+        endpoint: 'https://hdf4rbaegu.us.aircode.run/ask',
       }),
     })
   },
