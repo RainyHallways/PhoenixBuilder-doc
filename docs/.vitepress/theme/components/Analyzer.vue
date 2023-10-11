@@ -153,15 +153,24 @@ function logAnalysis(log) {
       "PhoenixBuilder无法获得租赁服IP",
     )
 
-  // 32 位超过 1G
+  // 账密输错
   } else if (
     log.includes("Invalid username or password")
   ) {
     showAnalysisResult(
       "Success",
       "检查你输入的账号密码是否正确(一次性密码只能使用一次)",
-//      SYSTEM_URL + "#内存问题",
       "账密输错",
+    )
+
+// 账密输错
+  } else if (
+    log.includes("Invalid username or password")
+  ) {
+    showAnalysisResult(
+      "Success",
+      "无法连接至API验证服务器，请检查你的网络环境或查看频道公告验证服务器是否正在维护",
+      "无法连接至验证服务器",
     )
 
   // 以上都无
