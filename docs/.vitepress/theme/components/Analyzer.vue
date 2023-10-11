@@ -170,7 +170,7 @@ function logAnalysis(log) {
     showAnalysisResult(
       "Success",
       "无法连接至API验证服务器",
-//      SYSTEM_URL + "#无法与API服务器联通",
+      SYSTEM_URL + "#无法与API服务器联通",
       "无法连接至验证服务器",
     )
 
