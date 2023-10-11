@@ -23,7 +23,7 @@ const ROOT_URL = CUR_URL.substring( // 根网址
   CUR_URL.indexOf(window.location.pathname),
 )
 /*--
-const SYSTEM_URL = ROOT_URL + "/client/system.html" // 系统问题
+const SYSTEM_URL = ROOT_URL + "/error/common2solve.html" // 系统问题
 const VANILLA_URL = ROOT_URL + "/client/vanilla.html" // 原版问题
 const MODS_URL = ROOT_URL + "/client/mods.html" // Mod 问题
 const MIXIN_URL = ROOT_URL + "/mixin.html" // Mod 问题
@@ -169,7 +169,8 @@ function logAnalysis(log) {
   ) {
     showAnalysisResult(
       "Success",
-      "无法连接至API验证服务器，请检查你的网络环境或查看频道公告验证服务器是否正在维护",
+      "无法连接至API验证服务器",
+//      SYSTEM_URL + "#无法与API服务器联通",
       "无法连接至验证服务器",
     )
 
