@@ -165,7 +165,7 @@ function logAnalysis(log) {
 
 // 账密输错
   } else if (
-    log.includes("Invalid username or password")
+    log.includes("Failed to contact with API")
   ) {
     showAnalysisResult(
       "Success",
