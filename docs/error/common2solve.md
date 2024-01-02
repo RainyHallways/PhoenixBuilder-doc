@@ -106,6 +106,13 @@ ERROR runtime error: index out of range [0] with length 0
 > 
 > 4.未知(重启能解决 99% 的问题)
 
+## 电脑端无法导入
+**问题描述** : 报错中出现 `The system cannot find the file specified.`
+
+**解决方法** : 请将路径改为双斜杠
+
+**使用方法** : 将路径改为双斜杠即可，例如 `C:\Users\114514\Desktop\fb` 改为 `C:\\Users\\114514\\Desktop\\fb`
+
 # Legacy-Omega
 
 > 自 [`v5.7.0`](https://github.com/LNSSPsd/PhoenixBuilder/releases/tag/v5.7.0) 版本起 `PhoenixBuilder` 已停止对 `Legacy-Omega` 的支持
