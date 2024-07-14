@@ -15,7 +15,7 @@ hero:
       link: /guide
     - theme: alt
       text: 发行版下载
-      link: https://github.com/LNSSPsd/PhoenixBuilder/releases
+      link: https://github.com/bouldev/PhoenixBuilder/releases
 
 features:
   - title: 别在频道里随便提问题了（

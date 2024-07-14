@@ -8,13 +8,13 @@ contributors: []
 :::
 
 > PhoenixBuilder 是专门为网易版租赁服设计的多功能结构生成工具。~~兼有服务器管理功能的可选的 Omega 模块~~(此功能在v5.7.0被移除)  
-> 目前建筑方面支持的功能有 欧几里得几何 ~~·ACME文件~~ (已移除)  ·BDP (BDump, bdx) ~~·schematic（方块NBT数据丢弃）~~ (此功能在 [libre分支]()中存在) 文件的建筑生成，以及图像绘制。
+> 目前建筑方面支持的功能有 欧几里得几何 ~~·ACME文件~~ (已移除)  ·BDP (BDump, bdx) ·schematic 文件的建筑生成，以及图像绘制。
 
 - 本文中除特殊说明之处外，所述之 FastBuilder 均代表 PhoenixBuilder 。
 
 # 源代码开放
 
-PhoenixBuilder 客户端 完整代码已开源（包括验证系统客户端以及核心算法），源代码点击[此处](https://github.com/LNSSPsd/PhoenixBuilder)可见（AGPL v3 协议）。
+PhoenixBuilder 客户端 完整代码已开源（包括验证系统客户端以及核心算法），源代码点击[此处](https://github.com/bouldev/PhoenixBuilder)可见（AGPL v3 协议）。
 但开放源代码并不意味着免费，您必须拥有 FastBuilder 账号才能使用它进入网易的服务器。
 
 -以 AGPL v3 协议发布代表着开发组允许您对软件本体进行修改并进行再发布，且并不阻止商业行为。
@@ -41,11 +41,11 @@ PhoenixBuilder 与其他程序的不同点在于，存在 **「客户端」** �
 # 相关版本介绍
 
 :::tip 官方分支<Badge type="fb" text="官方分支" />
-版本号格式为 v1.1.4 且有指向于 https://github.com/LNSSPsd/PhoenixBuilder 的链接
+版本号格式为 v1.1.4 且有指向于 https://github.com/bouldev/PhoenixBuilder 的链接
 :::
 
 :::tip libre分支<Badge type="libre" text="libre分支" />
-版本号格式为 Branche de Liberté 5.7.4-libre 且有指向于  https://github.com/LNSSPsd/PhoenixBuilder/tree/libre 的链接
+版本号格式为 Branche de Liberté 5.7.4-libre 且有指向于  https://github.com/bouldev/PhoenixBuilder/tree/libre 的链接
 :::
 
 :::tip Dev分支<Badge type="unsupport" text="已停止支持" />
